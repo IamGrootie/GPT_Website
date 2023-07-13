@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #040C18;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.gradient-bg {
+  /* ff 3.6+ */
+  /* safari 5.1+,chrome 10+ */
+  /* opera 11.10+ */
+  /* ie 10+ */
+  /* global 92%+ browsers support */
+  background: radial-gradient(circle at 3% 25%, rgb(0, 40, 83) 0%, rgb(4, 12, 24) 100%);
+}
+.gradient-bg .gradient-text {
+  background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scale-up-center {
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6rem;
+}
+.navbar .navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.navbar .navbar-links-logo {
+  margin-right: 2rem;
+}
+.navbar .navbar-links-logo img {
+  width: 62px;
+  height: 1rem;
+}
+.navbar .navbar-links-container, .navbar .navbar-sign p {
+  display: flex;
+  flex-direction: row;
+}
+.navbar .navbar-links-container > p, .navbar .navbar-sign p > p {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+}
+.navbar .navbar-sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}/*# sourceMappingURL=styles.css.map */
