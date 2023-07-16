@@ -51,7 +51,14 @@ a {
 	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
- @-webkit-keyframes scale-up-center {
+.section-padding {
+  padding: 4rem 6rem;
+}
+
+.section-margin {
+  margin: 4rem 6rem;
+}
+@-webkit-keyframes scale-up-center {
     0% {
       -webkit-transform: scale(0.5);
               transform: scale(0.5);
@@ -61,17 +68,31 @@ a {
               transform: scale(1);
     }
   }
-  @keyframes scale-up-center {
-    0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-    }
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
   
+@mixin button($border-radius) {
+  border-radius: $border-radius;
+  background: #ff4820;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -82,23 +103,14 @@ a {
     color: #fff;
     font-family: $font;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
     text-transform: capitalize;
     margin: 0 1rem;
     cursor: pointer;
   }
   button {
-    border-radius: 5px;
-    background: #ff4820;
-    padding: 0.5rem 1rem;
-    color: #fff;
-    font-family: $font;
-    font-weight: 500;
-    font-size: 18px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
+    @include button(.3125rem);
   }
   &-links {
     flex: 1;
@@ -111,11 +123,10 @@ a {
     margin-right: 2rem;
 
     img {
-      width: 62px;
+      width: 3.875rem;
       height: 1rem;
     }
   }
-
 
   &-links-container {
     display: flex;
@@ -148,17 +159,105 @@ a {
     background: $color-footer;
     padding: 2rem;
     position: absolute;
-    top: 40px;
+    top: 2.5rem;
     right: 0;
     margin-top: 1rem;
-    min-width: 210px;
-    border-radius: 5px;
+    min-width: 13.125rem;
+    border-radius: .3125rem;
     box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
     p {
       margin: 1rem 0;
     }
     &-sign {
       display: none;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  &-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    
+    margin-right: 5rem;
+
+    h1 {
+      font-family: $font;
+      font-weight: 800;
+      font-size: 3.875rem;
+      line-height: 4.6875rem; 
+      letter-spacing: -0.155rem;
+    }
+    p {
+      color: $color-text;
+      font-family: $font;
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 400;
+      margin-top: 1.5rem;
+    }
+    &-input {
+      width: 100%;
+      margin: 2rem 0 1rem;
+      display: flex;
+      
+      input {
+        font-family: $font;
+        font-size: 1.25rem;
+        color: #fff;
+        line-height: 1.75rem;
+        flex: 2;
+        width: 100%;
+        min-height: 3.125rem;
+        background: $color-footer;
+        padding: 0 1rem;
+        border: .125rem solid $color-footer;
+        border-radius: 0.3125rem 0rem 0rem 0.3125rem;
+        outline: none;
+      }
+      button {
+        @include button(0 .3125rem .3125rem 0 );
+        flex: 0.6;
+        width: 100%;
+        min-height: 3.125rem;
+      }
+    }
+    &-ppl {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 2rem;
+
+      img {
+        width: 11.3619rem;
+        height: 2.375rem;
+      }
+      p {
+        margin: 0 0 0 1rem;
+        font-family: $font;
+        font-weight: 500;
+        font-size: .75rem;
+        line-height: 2.375rem;
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+  &-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 }
@@ -172,15 +271,53 @@ a {
       display: flex;
     }
   }
+  .header {
+    flex-direction: column;
+    &-content {
+      margin: 0 0 3rem;
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
+  .section-padding {
+    padding: 4rem;
+  }
+  .section-margin {
+    margin: 4rem;
+  }
   .navbar {
     padding: 2rem 4rem;
+  }
+  .header {
+    h1 {
+      font-size: 3rem;
+      line-height: 3.75rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    &-content-ppl {
+      flex-direction: column;
+      p {
+        margin: 0;
+      }
+    }
+    input, button {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   }
 }
 
 @media screen and (max-width: 550px) {
+  .section-padding {
+    padding: 4rem 2rem;
+  }
+  .section-margin {
+    margin: 4rem 2rem;
+  }  
   .navbar {
     padding: 2rem;
 
@@ -194,5 +331,18 @@ a {
       }
     }
   }
-  
+  .header {
+    h1 {
+      font-size: 2.25rem;
+      line-height: 48px;
+    }
+    p {
+      font-size: .875rem;
+      line-height: 24px;
+    } 
+    input, button {
+      font-size: .75rem;
+      line-height: 1rem;
+    }
+  }
 }
