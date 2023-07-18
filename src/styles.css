@@ -222,6 +222,23 @@ a {
   height: 100%;
 }
 
+.brand {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.91rem;
+}
+.brand div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  max-width: 9.375rem;
+  min-width: 7.5rem;
+}
+
 @media screen and (max-width: 1050px) {
   .navbar-links-container {
     display: none;
