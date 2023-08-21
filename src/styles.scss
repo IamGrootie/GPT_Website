@@ -20,6 +20,7 @@ $gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
 
 body {
     background-color: $color-bckg;
+    font-family: $font;
 }
 
 a {
@@ -38,12 +39,13 @@ a {
     background: -ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
     /* global 92%+ browsers support */
     background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
-    .gradient-text {
-        background: $gradient-text;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+    
+}
+.gradient-text {
+  background: $gradient-text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .scale-up-center {
@@ -279,6 +281,118 @@ a {
   }
 }
 
+.whatgpt {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: $color-footer;
+  
+   /* ff 3.6+ */
+   background:-moz-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+   /* safari 5.1+,chrome 10+ */
+   background:-webkit-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+   /* opera 11.10+ */
+   background:-o-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+   /* ie 10+ */
+   background:-ms-radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+   /* global 92%+ browsers support */
+   background:radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%);
+
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  &-feature {
+    display: flex;
+    margin: 0;
+    max-width: 43.75rem;
+  }
+  &-feature .feature-container {
+    margin: 0;
+  }
+  &-feature .feature-container-text {
+    max-width: 43.75rem;
+  }
+  &-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 0 2rem;
+    h1 {
+      font-size: 2.125rem;
+      line-height: 45px;
+      font-weight: 800;
+      max-width: 31.875rem;
+    }
+    p {
+      color: $color-subtext;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.875rem;
+      cursor: pointer;
+    }
+  }
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 2rem;
+  }
+  &-container .feature-container {
+    flex: 1;
+    margin: 1rem;
+    min-width: 210px;
+    display: unset;
+    flex-direction: column;
+  }
+  &-container .feature-container-text {
+    margin-top: 0.5rem;
+  }
+}
+
+.feature-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+
+  margin: 1rem;
+  &-title {
+    flex: 1;
+    max-width: 11.25rem;
+    margin-right: 2rem;
+    div {
+      width: 2.375rem;
+      height: .1875rem;
+      background: $gradient-bar;
+      box-shadow: 0rem .25rem  .25rem rgba(0, 0, 0, 0.25);
+      margin-bottom: 0.25rem;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      letter-spacing: -0.04em;
+      color: #fff;
+    }
+  }
+  &-text {
+    flex: 2;
+    max-width: 24.375rem;
+    display: flex;
+    p {
+      font-weight: 500;
+      font-size: .875rem;
+      line-height: 1.5rem;
+      color: $color-text;
+    }
+  }
+}
+
 @media screen and (max-width: 1050px) {
   .navbar {
     &-links-container {
@@ -292,6 +406,16 @@ a {
     flex-direction: column;
     &-content {
       margin: 0 0 3rem;
+    }
+  }
+  .whatgpt {
+    &-heading {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0rem;
+      p {
+        margin-top: 1rem;
+      }
     }
   }
 }
@@ -326,6 +450,18 @@ a {
       line-height: 1.5rem;
     }
   }
+  .whatgpt {
+    &-feature .feature-container {
+      flex-direction: column;
+    } 
+    &-feature .feature-container-text {
+      margin-top: 0.5rem;
+    }
+    &-heading h1 {
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -342,7 +478,7 @@ a {
       display: none;
     }
     &-menu-container {
-      top: 20px;
+      top: 1.25rem;
       &-sign {
         display: block;
       }
@@ -350,16 +486,33 @@ a {
   }
   .header {
     h1 {
-      font-size: 2.25rem;
-      line-height: 48px;
+      font-size: 2.400px;
+      line-height: 3rem;
     }
     p {
       font-size: .875rem;
-      line-height: 24px;
+      line-height: 1.5rem;
     } 
     input, button {
       font-size: .75rem;
       line-height: 1rem;
+    }
+  }
+  .whatgpt {
+    &-container .feature-container{
+      margin: 1rem 0;
+      min-width: 100%;
+    }
+  }
+  .feature-container {
+    margin: 1rem 0;
+    &-title h1 {
+      font-size: .875rem;
+      line-height: 1.375rem;
+    }
+    &-text p {
+      font-size: .75rem;
+      line-height: 1.25rem;
     }
   }
 }

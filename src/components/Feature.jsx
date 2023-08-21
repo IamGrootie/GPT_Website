@@ -1,10 +1,16 @@
 import React from 'react'
 import '../styles.scss';
 
-function Feature() {
+function Feature({title, text}) {
   return (
-    <div>
-
+    <div className='feature-container'>
+      <div className='feature-container-title'>
+        <div/>
+        <h1>{title}</h1>
+      </div>
+      <div className='feature-container-text'>
+        <p>{text}</p>
+      </div>
     </div>
   )
 }
