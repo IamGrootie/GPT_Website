@@ -1,10 +1,30 @@
 import React from 'react'
 import '../styles.scss'
 
+import Article from '../components/Article';
+import blog01 from '../assets/blog01.png';
+import blog02 from '../assets/blog02.png';
+import blog03 from '../assets/blog03.png';
+import blog04 from '../assets/blog04.png';
+import blog05 from '../assets/blog05.png';
+
 function Blog() {
   return (
-    <div>
-        
+    <div className='blog section-padding' id='blog'>
+      <div className="blog-heading">
+        <h1 className="gradient-text">A lot is happening, <br /> We are blogging about it.</h1>
+      </div>    
+      <div className="blog-container">
+        <div className="blog-container-full">
+          <Article imgSrc={blog01} date='Sep 26,2021' text='GPT-3 and Open AI is the future. Let us explore how it is?'/>
+        </div>
+        <div className="blog-container-wrap">
+          <Article imgSrc={blog02} date='Sep 26,2021' text='GPT-3 and Open AI is the future. Let us explore how it is?'/>
+          <Article imgSrc={blog03} date='Sep 26,2021' text='GPT-3 and Open AI is the future. Let us explore how it is?'/>
+          <Article imgSrc={blog04} date='Sep 26,2021' text='GPT-3 and Open AI is the future. Let us explore how it is?'/>
+          <Article imgSrc={blog05} date='Sep 26,2021' text='GPT-3 and Open AI is the future. Let us explore how it is?'/>
+        </div>  
+      </div>    
     </div>
   )
 }

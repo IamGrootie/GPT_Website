@@ -523,6 +523,174 @@ a {
   }
 }
 
+.article-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $color-footer;
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    background: $color-bckg;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    height: 100%;
+
+    p{
+      font-size: .73rem;
+      font-weight: 700;
+      line-height: 2.1875rem;
+      color:#fff;
+    }
+
+    h3 {
+      font-size: 1.57rem;
+      font-weight: 800;
+      line-height: 1.875rem;
+      color: #fff;
+      margin-bottom: 5rem;
+      cursor: pointer;
+    }
+
+    p:last-child {
+      cursor: pointer;
+    }
+  }
+}
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  &-heading {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5rem;
+    h1 {
+      font-size: 3.875rem;
+      line-height: 4.6875rem;
+      font-weight: 800;
+    }
+  }
+  &-container {
+    display: flex;
+    flex-direction: row;
+    &-full {
+      flex: 0.75;
+      margin-right: 2rem;
+    }
+    &-wrap {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $color-footer;
+  &-heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+    h1 {
+      font-weight: 800;
+      font-size: 4rem;
+      line-height: 4.6875rem;
+    }
+  }
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #fff;
+    text-align: center;
+    margin-bottom: 10rem;
+    cursor: pointer;
+    p {
+      font-size: 1.125rem;
+      font-family: $font;
+      line-height: 1.3125rem;
+      color: #fff;
+      word-spacing: .125rem;
+    }
+  }
+  &-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    div {
+      width: 13rem;
+      margin: 1rem;
+    }
+    &-logo {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 7.375rem;
+        height: 1.875rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: .75rem;
+        line-height: .9375rem;
+        color: #fff;
+      }
+    }
+    &-div {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      h4 {
+        font-size: .875rem;
+        line-height: 1.0625rem;
+        color: #fff;
+        margin-bottom: 0.9rem;
+      }
+      p, a {
+        font-size: .75rem;
+        line-height: .9375rem;
+        color: #fff;
+        margin: 0.5rem 0;
+        cursor: pointer;
+      }
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-copyright {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+    p {
+      font-size: .75rem;
+      line-height: .9375rem;
+      color: #fff;
+    }
+  }
+}
+
 @media screen and (max-width: 1050px) {
   .navbar {
     &-links-container {
@@ -562,6 +730,22 @@ a {
     &-content {
       margin-top: 2rem;
     }
+  }
+  .blog-container-full .article-container {
+    width: 48%;
+  }
+  .blog-container-full .article-container-image {
+    height: 15.625rem;
+  }
+  .blog-container {
+    flex-direction: column-reverse;
+    &-full {
+      margin: 2rem 0;
+    }
+  } 
+  .footer-heading h1 {
+    font-size: 2.75rem;
+    line-height: 3.125rem;
   }
 }
 
@@ -617,6 +801,21 @@ a {
     flex-direction: column;
     &-btn {
       margin: 2rem 0 0;
+    }
+  }
+  .blog-container-full .article-container {
+    width: 100%;
+  }
+  .blog {
+    &-heading h1 {
+      font-size: 2.875rem;
+      line-height: 3.25rem;
+    }
+    &-container-wrap {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &-container-full {
+      width: 100%;
     }
   }
 }
@@ -688,6 +887,29 @@ a {
     button {
       font-size: .875rem;
       line-height: 1.75rem;
+    }
+  }
+  .article-container h3{
+      font-size: 1.125rem;
+      line-height: 1.5625rem;
+  }
+  .blog {
+    &-heading h1 {
+      font-size: 2.125rem;
+      line-height: 2.625rem;
+    }
+  }
+  .footer {
+    &-heading h1 {
+      font-size: 2.125rem;
+      line-height: 2.625rem;
+    }
+    &-links div {
+      margin: 1rem 0;
+    }
+    &-btn p {
+      font-size: .875rem;
+      line-height: 1.25rem;
     }
   }
 }
